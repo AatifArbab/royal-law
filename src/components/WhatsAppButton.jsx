@@ -1,44 +1,129 @@
-import React from "react";
+import React, { useState } from "react";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "923001234567";
+  const [hovered, setHovered] = useState(false);
 
-  const message =
-    "Assalam o Alaikum, I would like to get a legal consultation from Royal Law.";
-
-  const openWhatsApp = () => {
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
-    )}`;
-
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-  };
+  const phoneNumber = "923001234567"; // apna WhatsApp number (country code k sath) yahan daalein
+  const message = "Assalam-o-Alaikum, mujhe Royal Law Associates se legal consultation chahiye.";
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <button
-      type="button"
-      className="whatsapp-button"
-      onClick={openWhatsApp}
-      aria-label="Chat with Royal Law on WhatsApp"
-      title="Chat with us on WhatsApp"
+    <a
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-float"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      aria-label="WhatsApp par contact karein"
     >
-      <span className="whatsapp-icon" aria-hidden="true">
-        <svg
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          width="22"
-          height="22"
-        >
-          <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.56 0 .25 5.31.25 11.83c0 2.08.54 4.11 1.56 5.91L.16 24l6.4-1.68a11.8 11.8 0 0 0 5.52 1.37h.01c6.52 0 11.83-5.31 11.83-11.83 0-3.16-1.23-6.13-3.4-8.38ZM12.09 21.7h-.01a9.83 9.83 0 0 1-5.01-1.36l-.36-.21-3.8 1 1.01-3.7-.23-.38a9.84 9.84 0 1 1 8.4 4.65Zm5.4-7.37c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z" />
+      <style>{`
+        .whatsapp-float {
+          position: fixed;
+          bottom: 28px;
+          right: 28px;
+          z-index: 999;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: #0a0f1a;
+          border: 1px solid #d4a017;
+          border-radius: 50px;
+          padding: 14px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+          text-decoration: none;
+          transition: padding 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+          overflow: hidden;
+        }
+
+        .whatsapp-float:hover {
+          padding: 14px 22px 14px 14px;
+          box-shadow: 0 6px 24px rgba(212, 160, 23, 0.35);
+          transform: translateY(-2px);
+        }
+
+        .whatsapp-icon-wrap {
+          width: 30px;
+          height: 30px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+
+        .whatsapp-icon-wrap::before {
+          content: "";
+          position: absolute;
+          inset: -6px;
+          border-radius: 50%;
+          border: 1.5px solid #d4a017;
+          opacity: 0;
+          transform: scale(0.8);
+          animation: whatsapp-pulse 2.5s ease-out infinite;
+        }
+
+        @keyframes whatsapp-pulse {
+          0% {
+            opacity: 0.6;
+            transform: scale(0.8);
+          }
+          70% {
+            opacity: 0;
+            transform: scale(1.6);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(1.6);
+          }
+        }
+
+        .whatsapp-label {
+          max-width: 0;
+          opacity: 0;
+          white-space: nowrap;
+          color: #f4f4f4;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 0.2px;
+          transition: max-width 0.3s ease, opacity 0.25s ease 0.05s;
+        }
+
+        .whatsapp-float:hover .whatsapp-label {
+          max-width: 220px;
+          opacity: 1;
+        }
+
+        @media (max-width: 600px) {
+          .whatsapp-float {
+            bottom: 20px;
+            right: 20px;
+            padding: 13px;
+          }
+          .whatsapp-float:hover {
+            padding: 13px;
+          }
+          .whatsapp-label {
+            display: none;
+          }
+        }
+      `}</style>
+
+      <div className="whatsapp-icon-wrap">
+        <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+          <path
+            d="M16 3C9.373 3 4 8.373 4 15c0 2.393.7 4.623 1.908 6.494L4 29l7.68-1.868A11.93 11.93 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3z"
+            fill="#d4a017"
+          />
+          <path
+            d="M22.104 18.3c-.33-.165-1.955-.964-2.258-1.074-.303-.11-.523-.165-.744.165-.22.33-.853 1.074-1.046 1.294-.193.22-.386.248-.716.083-.33-.165-1.393-.513-2.653-1.636-.981-.874-1.643-1.954-1.836-2.284-.193-.33-.02-.508.145-.673.149-.148.33-.386.495-.579.165-.193.22-.33.33-.55.11-.22.055-.413-.028-.578-.083-.165-.744-1.793-1.02-2.456-.269-.645-.542-.558-.744-.568-.193-.01-.413-.012-.633-.012-.22 0-.578.083-.881.413-.303.33-1.156 1.13-1.156 2.756 0 1.626 1.184 3.197 1.349 3.418.165.22 2.33 3.556 5.646 4.988.789.34 1.404.543 1.884.695.792.252 1.513.216 2.083.131.635-.095 1.955-.799 2.231-1.57.276-.771.276-1.432.193-1.57-.083-.138-.303-.22-.633-.386z"
+            fill="#0a0f1a"
+          />
         </svg>
-      </span>
+      </div>
 
-      <strong>WhatsApp</strong>
-
-      <span className="whatsapp-label">
-        Chat with us
-      </span>
-    </button>
+      <span className="whatsapp-label">WhatsApp par baat karein</span>
+    </a>
   );
 };
 
