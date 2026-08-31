@@ -5,148 +5,473 @@ import WhatsAppButton from "../components/WhatsAppButton";
 const ContactPage = () => {
   return (
     <>
+      {/* ================================
+          PREMIUM CONTACT HERO
+      ================================= */}
+
       <section className="contact-page-header">
-        <div className="container">
-          <span className="section-tag">
-            ROYAL LAW • LEGAL CONSULTATION
-          </span>
+        <div className="hero-overlay"></div>
 
-          <h1>
-            Schedule a Confidential
-            <span> Legal Consultation</span>
-          </h1>
+        <div className="hero-decoration decoration-one"></div>
+        <div className="hero-decoration decoration-two"></div>
 
-          <p>
-            At Royal Law, we provide trusted legal advice, strategic
-            representation, and practical solutions for individuals,
-            families, and businesses. Our commitment is to protect your
-            rights, safeguard your interests, and deliver professional
-            legal services with integrity and excellence.
-          </p>
+        <div className="contact-hero-container">
+          <div className="hero-content">
 
-          <div className="header-badges">
-            <span>Integrity</span>
-            <span>Advocacy</span>
-            <span>Justice</span>
+            <div className="hero-label">
+              <span className="label-line"></span>
+              <span>ROYAL LAW</span>
+              <span className="label-line"></span>
+            </div>
+
+            <div className="hero-kicker">
+              LEGAL CONSULTATION & REPRESENTATION
+            </div>
+
+            <h1>
+              Trusted Counsel.
+              <br />
+              <span>Strategic Representation.</span>
+            </h1>
+
+            <p className="hero-description">
+              When your rights, family, property, business, or future are
+              at stake, having the right legal counsel matters. Royal Law
+              provides professional legal guidance and representation with
+              integrity, discretion, and a commitment to justice.
+            </p>
+
+            <div className="hero-actions">
+              <a href="#contact" className="hero-primary-btn">
+                Request a Consultation
+                <span>→</span>
+              </a>
+
+              <a href="tel:03701675145" className="hero-secondary-btn">
+                Call 0370 1675145
+              </a>
+            </div>
+
+            <div className="hero-trust">
+              <div className="trust-item">
+                <strong>01</strong>
+                <span>Professional</span>
+              </div>
+
+              <div className="trust-divider"></div>
+
+              <div className="trust-item">
+                <strong>02</strong>
+                <span>Confidential</span>
+              </div>
+
+              <div className="trust-divider"></div>
+
+              <div className="trust-item">
+                <strong>03</strong>
+                <span>Client Focused</span>
+              </div>
+            </div>
+
           </div>
+        </div>
+
+        <div className="hero-bottom">
+          <span>SCROLL TO CONNECT</span>
+          <div className="scroll-line"></div>
         </div>
       </section>
 
+      {/* ================================
+          CONTACT SECTION
+      ================================= */}
+
       <Contact />
+
+      {/* ================================
+          WHATSAPP BUTTON
+      ================================= */}
+
       <WhatsAppButton />
 
+      {/* ================================
+          PAGE STYLES
+      ================================= */}
+
       <style>{`
+        * {
+          box-sizing: border-box;
+        }
+
         .contact-page-header {
           position: relative;
-          padding: 140px 20px 100px;
-          text-align: center;
-          background: linear-gradient(
-            135deg,
-            #0b1120,
-            #172033,
-            #1e293b
-          );
-          color: #fff;
+          min-height: 720px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           overflow: hidden;
+          background:
+            radial-gradient(
+              circle at 15% 20%,
+              rgba(212, 175, 55, 0.08),
+              transparent 30%
+            ),
+            radial-gradient(
+              circle at 85% 80%,
+              rgba(212, 175, 55, 0.06),
+              transparent 30%
+            ),
+            linear-gradient(
+              135deg,
+              #080d18 0%,
+              #0d1525 45%,
+              #172235 100%
+            );
+          color: #ffffff;
+        }
+
+        .hero-overlay {
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(
+              90deg,
+              rgba(8, 13, 24, 0.9),
+              rgba(13, 21, 37, 0.7),
+              rgba(8, 13, 24, 0.9)
+            );
+          pointer-events: none;
         }
 
         .contact-page-header::before {
           content: "";
           position: absolute;
-          width: 350px;
-          height: 350px;
-          background: rgba(212, 175, 55, 0.08);
-          border-radius: 50%;
-          top: -100px;
-          right: -100px;
+          inset: 25px;
+          border: 1px solid rgba(212, 175, 55, 0.1);
+          pointer-events: none;
         }
 
         .contact-page-header::after {
           content: "";
           position: absolute;
-          width: 250px;
-          height: 250px;
-          background: rgba(212, 175, 55, 0.05);
-          border-radius: 50%;
-          bottom: -80px;
-          left: -80px;
+          left: 50%;
+          bottom: -1px;
+          transform: translateX(-50%);
+          width: 180px;
+          height: 2px;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            transparent
+          );
         }
 
-        .container {
-          max-width: 900px;
+        .hero-decoration {
+          position: absolute;
+          border: 1px solid rgba(212, 175, 55, 0.12);
+          transform: rotate(45deg);
+          pointer-events: none;
+        }
+
+        .decoration-one {
+          width: 180px;
+          height: 180px;
+          right: -90px;
+          top: 90px;
+        }
+
+        .decoration-two {
+          width: 120px;
+          height: 120px;
+          left: -60px;
+          bottom: 100px;
+        }
+
+        .contact-hero-container {
+          width: 92%;
+          max-width: 1100px;
           margin: 0 auto;
           position: relative;
-          z-index: 2;
+          z-index: 3;
+          text-align: center;
         }
 
-        .section-tag {
-          display: inline-block;
+        .hero-content {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .hero-label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 14px;
           color: #d4af37;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 700;
-          letter-spacing: 3px;
-          text-transform: uppercase;
+          letter-spacing: 5px;
           margin-bottom: 20px;
         }
 
+        .label-line {
+          width: 45px;
+          height: 1px;
+          background: #d4af37;
+          opacity: 0.7;
+        }
+
+        .hero-kicker {
+          color: rgba(255, 255, 255, 0.55);
+          font-size: 12px;
+          letter-spacing: 3px;
+          font-weight: 500;
+          margin-bottom: 24px;
+        }
+
         .contact-page-header h1 {
-          font-size: 3.5rem;
-          font-weight: 800;
-          line-height: 1.15;
-          margin-bottom: 25px;
+          margin: 0;
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: clamp(3rem, 6vw, 5.2rem);
+          font-weight: 500;
+          line-height: 1.08;
+          letter-spacing: -1.5px;
+          color: #ffffff;
         }
 
         .contact-page-header h1 span {
           color: #d4af37;
+          font-style: italic;
         }
 
-        .contact-page-header p {
-          font-size: 1.1rem;
+        .hero-description {
+          max-width: 760px;
+          margin: 30px auto 0;
+          color: rgba(255, 255, 255, 0.72);
+          font-size: 17px;
           line-height: 1.9;
-          color: rgba(255, 255, 255, 0.85);
-          max-width: 750px;
-          margin: 0 auto;
+          font-weight: 400;
         }
 
-        .header-badges {
-          margin-top: 35px;
+        .hero-actions {
           display: flex;
           justify-content: center;
-          gap: 15px;
+          align-items: center;
+          gap: 14px;
+          margin-top: 38px;
           flex-wrap: wrap;
         }
 
-        .header-badges span {
-          padding: 10px 20px;
-          border: 1px solid rgba(212, 175, 55, 0.4);
-          border-radius: 30px;
-          color: #d4af37;
+        .hero-primary-btn,
+        .hero-secondary-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 54px;
+          padding: 0 27px;
+          border-radius: 2px;
+          text-decoration: none;
           font-size: 14px;
-          font-weight: 600;
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(5px);
+          font-weight: 700;
+          letter-spacing: 0.4px;
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            background 0.3s ease,
+            color 0.3s ease;
+        }
+
+        .hero-primary-btn {
+          gap: 14px;
+          background: #d4af37;
+          color: #101827;
+          box-shadow: 0 12px 35px rgba(212, 175, 55, 0.18);
+        }
+
+        .hero-primary-btn span {
+          font-size: 20px;
+          transition: transform 0.3s ease;
+        }
+
+        .hero-primary-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 18px 45px rgba(212, 175, 55, 0.28);
+        }
+
+        .hero-primary-btn:hover span {
+          transform: translateX(5px);
+        }
+
+        .hero-secondary-btn {
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: #ffffff;
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+        }
+
+        .hero-secondary-btn:hover {
+          transform: translateY(-3px);
+          border-color: rgba(212, 175, 55, 0.6);
+          color: #d4af37;
+          background: rgba(212, 175, 55, 0.05);
+        }
+
+        .hero-trust {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 25px;
+          margin-top: 55px;
+        }
+
+        .trust-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .trust-item strong {
+          color: #d4af37;
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        .trust-item span {
+          color: rgba(255, 255, 255, 0.58);
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+        }
+
+        .trust-divider {
+          width: 1px;
+          height: 25px;
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-bottom {
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 3;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          color: rgba(255, 255, 255, 0.35);
+          font-size: 9px;
+          letter-spacing: 2px;
+          white-space: nowrap;
+        }
+
+        .scroll-line {
+          width: 35px;
+          height: 1px;
+          background: rgba(212, 175, 55, 0.5);
         }
 
         @media (max-width: 768px) {
           .contact-page-header {
-            padding: 110px 20px 80px;
+            min-height: 680px;
+            padding: 100px 0 70px;
+          }
+
+          .contact-page-header::before {
+            inset: 12px;
+          }
+
+          .hero-label {
+            gap: 9px;
+            font-size: 10px;
+            letter-spacing: 3px;
+          }
+
+          .label-line {
+            width: 28px;
+          }
+
+          .hero-kicker {
+            font-size: 10px;
+            letter-spacing: 2px;
           }
 
           .contact-page-header h1 {
-            font-size: 2.4rem;
+            font-size: 2.8rem;
+            letter-spacing: -0.8px;
           }
 
-          .contact-page-header p {
-            font-size: 1rem;
+          .hero-description {
+            font-size: 15px;
+            line-height: 1.8;
+            padding: 0 10px;
           }
 
-          .header-badges {
-            gap: 10px;
+          .hero-actions {
+            flex-direction: column;
+            width: 100%;
           }
 
-          .header-badges span {
-            font-size: 12px;
-            padding: 8px 14px;
+          .hero-primary-btn,
+          .hero-secondary-btn {
+            width: min(100%, 300px);
+          }
+
+          .hero-trust {
+            gap: 12px;
+            margin-top: 42px;
+          }
+
+          .trust-item {
+            flex-direction: column;
+            gap: 4px;
+          }
+
+          .trust-item strong {
+            font-size: 15px;
+          }
+
+          .trust-item span {
+            font-size: 9px;
+            letter-spacing: 1px;
+          }
+
+          .trust-divider {
+            height: 35px;
+          }
+
+          .decoration-one {
+            width: 120px;
+            height: 120px;
+            right: -70px;
+          }
+
+          .decoration-two {
+            width: 90px;
+            height: 90px;
+            left: -55px;
+          }
+
+          .hero-bottom {
+            display: none;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .contact-page-header h1 {
+            font-size: 2.35rem;
+          }
+
+          .hero-description {
+            font-size: 14px;
+          }
+
+          .hero-trust {
+            gap: 8px;
+          }
+
+          .trust-divider {
+            height: 30px;
           }
         }
       `}</style>
