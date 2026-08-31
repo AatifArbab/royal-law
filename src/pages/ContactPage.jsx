@@ -10,10 +10,10 @@ const ContactPage = () => {
       ================================= */}
 
       <section className="contact-page-header">
-        <div className="hero-overlay"></div>
+        <div className="hero-overlay" aria-hidden="true"></div>
 
-        <div className="hero-decoration decoration-one"></div>
-        <div className="hero-decoration decoration-two"></div>
+        <div className="hero-decoration decoration-one" aria-hidden="true"></div>
+        <div className="hero-decoration decoration-two" aria-hidden="true"></div>
 
         <div className="contact-hero-container">
           <div className="hero-content">
@@ -25,7 +25,7 @@ const ContactPage = () => {
             </div>
 
             <div className="hero-kicker">
-              LEGAL CONSULTATION & REPRESENTATION
+              LEGAL CONSULTATION &amp; REPRESENTATION
             </div>
 
             <h1>
@@ -44,11 +44,11 @@ const ContactPage = () => {
             <div className="hero-actions">
               <a href="#contact" className="hero-primary-btn">
                 Request a Consultation
-                <span>→</span>
+                <span aria-hidden="true">→</span>
               </a>
 
-              <a href="tel:03701675145" className="hero-secondary-btn">
-                Call 0370 1675145
+              <a href="tel:+923701675415" className="hero-secondary-btn">
+                Call 0370 1675415
               </a>
             </div>
 
@@ -99,7 +99,7 @@ const ContactPage = () => {
       ================================= */}
 
       <style>{`
-        * {
+        .contact-page-header * {
           box-sizing: border-box;
         }
 
@@ -300,6 +300,12 @@ const ContactPage = () => {
 
         .hero-primary-btn:hover span {
           transform: translateX(5px);
+        }
+
+        .hero-primary-btn:focus-visible,
+        .hero-secondary-btn:focus-visible {
+          outline: 2px solid #d4af37;
+          outline-offset: 3px;
         }
 
         .hero-secondary-btn {
