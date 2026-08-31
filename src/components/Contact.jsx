@@ -32,7 +32,7 @@ ${formData.message}
 
 I look forward to hearing from you. Thank you.`;
 
-    const whatsappNumber = "923001234567";
+    const whatsappNumber = "923701675145";
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -50,29 +50,30 @@ I look forward to hearing from you. Thank you.`;
         <div className="contact-info">
 
           <p className="contact-subtitle">
-            GET IN TOUCH
+            CONTACT ROYAL LAW
           </p>
 
           <h2>
-            Let’s Discuss Your
-            <span> Legal Matter.</span>
+            Professional Legal Advice &
+            <span> Representation</span>
           </h2>
 
           <p className="contact-description">
-            Have a legal concern or need professional guidance? Get in touch
-            with Royal Law today. Share your concerns with us and our team
-            will help you understand your legal options and the next steps.
+            Whether you require legal consultation, representation, or
+            guidance regarding family, criminal, property, civil, or
+            corporate matters, our legal team is prepared to assist you
+            with professionalism, confidentiality, and dedication.
           </p>
 
           <div className="contact-items">
 
             <div className="contact-item">
-              <div className="contact-icon">📞</div>
+              <div className="contact-icon">☎</div>
 
               <div>
                 <strong>Call Us</strong>
-                <a href="tel:+92300 8326838">
-                  +92 300 8326838
+                <a href="tel:03701675145">
+                  0370 1675145
                 </a>
               </div>
             </div>
@@ -82,17 +83,17 @@ I look forward to hearing from you. Thank you.`;
 
               <div>
                 <strong>Email Us</strong>
-                <a href="mailto:info@royallaw.pk">
-                  info@royallaw.pk
+                <a href="mailto:aatifarbab59@gmail.com">
+                  aatifarbab59@gmail.com
                 </a>
               </div>
             </div>
 
             <div className="contact-item">
-              <div className="contact-icon">📍</div>
+              <div className="contact-icon">⌖</div>
 
               <div>
-                <strong>Visit Our Office</strong>
+                <strong>Location</strong>
                 <span>Karachi, Pakistan</span>
               </div>
             </div>
@@ -100,10 +101,11 @@ I look forward to hearing from you. Thank you.`;
           </div>
 
           <div className="contact-note">
-            <strong>⚖ Professional & Confidential</strong>
+            <strong>Professional & Confidential</strong>
             <p>
-              Your privacy and legal concerns are treated with the utmost
-              care and confidentiality.
+              Every consultation is handled with complete privacy,
+              professionalism, and dedication to protecting your legal
+              rights and interests.
             </p>
           </div>
 
@@ -113,11 +115,11 @@ I look forward to hearing from you. Thank you.`;
         <div className="contact-form-wrapper">
 
           <div className="form-header">
-            <h3>Request a Consultation</h3>
+            <h3>Schedule a Legal Consultation</h3>
 
             <p>
-              Fill out the form below and connect with us directly through
-              WhatsApp.
+              Complete the form below and connect directly with our legal
+              team through WhatsApp for professional assistance.
             </p>
           </div>
 
@@ -164,8 +166,7 @@ I look forward to hearing from you. Thank you.`;
 
             <div className="form-group">
               <label htmlFor="email">
-                Email Address
-                <span> (Optional)</span>
+                Email Address (Optional)
               </label>
 
               <input
@@ -198,13 +199,12 @@ I look forward to hearing from you. Thank you.`;
               type="submit"
               className="contact-submit"
             >
-              Send Consultation Request
-              <span>→</span>
+              Request Consultation →
             </button>
 
             <p className="form-disclaimer">
-              By submitting this form, you agree to be contacted regarding
-              your consultation request.
+              All information provided will be treated with strict
+              confidentiality and used solely for consultation purposes.
             </p>
 
           </form>
