@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const WhatsAppButton = () => {
   const [hovered, setHovered] = useState(false);
 
-  const phoneNumber = "923001234567"; // apna WhatsApp number (country code k sath) yahan daalein
+  const phoneNumber = "923701675415"; // Royal Law Associates WhatsApp number
   const message = "Assalam-o-Alaikum, mujhe Royal Law Associates se legal consultation chahiye.";
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
