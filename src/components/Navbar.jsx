@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,11 +8,14 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  const linkClass = ({ isActive }) =>
+    isActive ? "active" : "";
+
   return (
     <header className="navbar">
       <div className="container nav-container">
         {/* Logo */}
-        <a href="/" className="logo" onClick={closeMenu}>
+        <NavLink to="/" className="logo" onClick={closeMenu}>
           <img
             src="/favicon.jpeg"
             alt="Royal Law Associates Logo"
@@ -22,44 +26,44 @@ const Navbar = () => {
             <strong>Royal Law</strong>
             <span>Associates</span>
           </div>
-        </a>
+        </NavLink>
 
         {/* Navigation */}
         <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <a href="/" onClick={closeMenu}>
+          <NavLink to="/" end className={linkClass} onClick={closeMenu}>
             Home
-          </a>
+          </NavLink>
 
-          <a href="/about" onClick={closeMenu}>
+          <NavLink to="/about" className={linkClass} onClick={closeMenu}>
             About Us
-          </a>
+          </NavLink>
 
-          <a href="/family-law" onClick={closeMenu}>
+          <NavLink to="/family-law" className={linkClass} onClick={closeMenu}>
             Family Law
-          </a>
+          </NavLink>
 
-          <a href="/criminal-law" onClick={closeMenu}>
+          <NavLink to="/criminal-law" className={linkClass} onClick={closeMenu}>
             Criminal Law
-          </a>
+          </NavLink>
 
-          <a href="/property-law" onClick={closeMenu}>
+          <NavLink to="/property-law" className={linkClass} onClick={closeMenu}>
             Property Law
-          </a>
+          </NavLink>
 
-          <a href="/corporate-law" onClick={closeMenu}>
+          <NavLink to="/corporate-law" className={linkClass} onClick={closeMenu}>
             Corporate Law
-          </a>
+          </NavLink>
 
-          <a href="/contact" onClick={closeMenu}>
+          <NavLink to="/contact" className={linkClass} onClick={closeMenu}>
             Contact
-          </a>
+          </NavLink>
         </nav>
 
         {/* Consultation Button */}
-        <a href="/contact" className="nav-btn">
+        <NavLink to="/contact" className="nav-btn">
           <span>Free Consultation</span>
           <span className="arrow">→</span>
-        </a>
+        </NavLink>
 
         {/* Mobile Menu Button */}
         <button
@@ -144,10 +148,17 @@ const Navbar = () => {
           font-weight: 500;
           transition: color 0.2s ease;
           position: relative;
+          padding-bottom: 4px;
+          border-bottom: 2px solid transparent;
         }
 
         .nav-links a:hover {
           color: #f6a11f;
+        }
+
+        .nav-links a.active {
+          color: #f6a11f;
+          border-bottom: 2px solid #f6a11f;
         }
 
         /* Consultation button */
@@ -232,6 +243,12 @@ const Navbar = () => {
             width: 100%;
             box-sizing: border-box;
             border-bottom: 1px solid #2a2725;
+          }
+
+          .nav-links a.active {
+            border-bottom: 1px solid #2a2725;
+            border-left: 3px solid #f6a11f;
+            padding-left: 21px;
           }
 
           .nav-btn {
