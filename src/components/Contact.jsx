@@ -319,8 +319,8 @@ ${formData.name}`;
               <div className="contact-icon">☎</div>
               <div>
                 <strong>Phone Consultation</strong>
-                <a href="tel:+923701675145">
-                  0370 1675145
+                <a href="tel:03008326838">
+                  03008326838
                 </a>
               </div>
             </div>
@@ -329,8 +329,8 @@ ${formData.name}`;
               <div className="contact-icon">✉</div>
               <div>
                 <strong>Email Consultation</strong>
-                <a href="mailto:aatifarbab59@gmail.com">
-                  aatifarbab59@gmail.com
+                <a href="Ahmedalisaeen110786@gmail.com">
+                  Ahmedalisaeen110786@gmail.com
                 </a>
               </div>
             </div>
@@ -415,7 +415,7 @@ ${formData.name}`;
                 id="email"
                 type="email"
                 name="email"
-                placeholder="your@email.com"
+                placeholder="Ahmedalisaeen110786@gmail.com"
                 value={formData.email}
                 onChange={handleChange}
               />

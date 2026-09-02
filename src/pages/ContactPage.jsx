@@ -47,8 +47,8 @@ const ContactPage = () => {
                 <span aria-hidden="true">→</span>
               </a>
 
-              <a href="tel:+923701675415" className="hero-secondary-btn">
-                Call 0370 1675415
+              <a href="tel: 03008326838" className="hero-secondary-btn">
+                Call  03008326838
               </a>
             </div>
 

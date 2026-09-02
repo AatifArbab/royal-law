@@ -52,20 +52,19 @@ const Footer = () => {
           <p>
             <strong>Location</strong>
             <br />
-            Karachi, Pakistan
-          </p>
+              Office No. M-8 Rafi Mall First Floor Near Malir NADRA District Malir Karachi          </p>
 
           <p>
             <strong>Phone</strong>
             <br />
-            <a href="tel:+923001234567">+92 300 1234567</a>
+            <a href="tel: 03008326838"> 03008326838</a>
           </p>
 
           <p>
             <strong>Email</strong>
             <br />
-            <a href="mailto:info@royallaw.pk">
-              info@royallaw.pk
+            <a href=":Ahmedalisaeen110786@gmail.com">
+              Ahmedalisaeen110786@gmail.com
             </a>
           </p>
         </div>
