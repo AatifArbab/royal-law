@@ -35,7 +35,7 @@ Please contact me regarding legal consultation.
 Thank you,
 ${formData.name}`;
 
-    const whatsappNumber = "923701675145";
+    const whatsappNumber = "03008326838";
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -339,7 +339,7 @@ ${formData.name}`;
               <div className="contact-icon">⌖</div>
               <div>
                 <strong>Office Location</strong>
-                <span>Karachi, Pakistan</span>
+                <span>Office No. M-8 Rafi Mall First Floor Near Malir NADRA District Malir Karachi.</span>
               </div>
             </div>
           </div>
