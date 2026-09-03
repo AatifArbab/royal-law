@@ -75,7 +75,9 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container footer-bottom-container">
           <p>
-            © {new Date().getFullYear()} Royal Law. All Rights Reserved.
+            © {new Date().getFullYear()} Royal Law.Developed By Aatif Arbab 
+            aatifarbab59@gmail.com
+             All Rights Reserved.
           </p>
 
           <p>
